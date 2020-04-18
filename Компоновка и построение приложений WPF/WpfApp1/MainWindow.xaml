@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="363.983" Width="845.272">
-    <StackPanel>
-        <Label Content="Example" HorizontalAlignment="Center"></Label>
-        <Button HorizontalAlignment="Right">Button 1</Button>
-        <Button HorizontalAlignment="Left">Button 2</Button>
-        <Button x:Name="cmd">Button 3</Button>
-        <Button Margin="5,10,5,10">Button 4</Button>
+    <StackPanel Margin="5">
+        <Label Content="Example" HorizontalAlignment="Center" Margin="5"></Label>
+        <Button HorizontalAlignment="Right" Margin="5">Button 1</Button>
+        <Button HorizontalAlignment="Left" Margin="5">Button 2</Button>
+        <Button Margin="5">Button 3</Button>
+        <Button Margin="5">Button 4</Button>
     </StackPanel>
 </Window>
