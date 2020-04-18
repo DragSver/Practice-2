@@ -5,15 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="342.253" Width="783.722" MinWidth="130" MinHeight="200">
-    <WrapPanel Background="AntiqueWhite" ItemHeight="30" ItemWidth="200">
-        <Label Content="MyWrapPanel" FontSize="15" />
-        <Label Content="Label 1" />
-        <TextBox></TextBox>
-        <Label Content="Label2"></Label>
-        <TextBox></TextBox>
-        <Label Content="Label3"></Label>
-        <TextBox></TextBox>
-        <Button Width="80">OK</Button>
-    </WrapPanel>
+        Title="MainWindow" Height="374.748" Width="809.256" MinWidth="400" MinHeight="200">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="Gray">
+            <WrapPanel  HorizontalAlignment="Center" >
+                <Button Background="DarkGray" Width="200" Height="30">Button 1</Button>
+                <Button Background="DarkGray" Width="200" Height="30">Button 2</Button>
+                <Button Background="DarkGray" Width="200" Height="30">Button 3</Button>
+                <Button Background="DarkGray" Width="200" Height="30">Button 4</Button>
+            </WrapPanel>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom" Background="Gray">
+            <StackPanel Orientation="Horizontal">
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 1</Button>
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 2</Button>
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 3</Button>
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 4</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 5</Button>
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 6</Button>
+                <Button Background="DarkGray" MinWidth="55" MaxWidth="180" Margin="1">Button 7</Button>
+            </StackPanel>
+        </Grid>
+        <Button DockPanel.Dock="Left" Background="Firebrick">LeftButton</Button>
+        <Button DockPanel.Dock="Right" Background="ForestGreen">RightButton</Button>
+        <Grid Background="LightGray">
+            <Label>Свободное пространство</Label>
+        </Grid>
+    </DockPanel>
 </Window>
