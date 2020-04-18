@@ -6,11 +6,14 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="342.253" Width="783.722" MinWidth="130" MinHeight="200">
-    <StackPanel Margin="5">
-        <Label Content="Example" HorizontalAlignment="Center" Margin="5"></Label>
-        <Button Margin="5" MinWidth="100" MaxWidth="200">Button 1</Button>
-        <Button Margin="5" MinWidth="100" MaxWidth="200">Button 2</Button>
-        <Button Margin="5" MinWidth="100" MaxWidth="200">Button 3</Button>
-        <Button Margin="5" MinWidth="100" MaxWidth="200">Button 4</Button>
-    </StackPanel>
+    <WrapPanel Background="LightSteelBlue">
+        <Label Content="MyWrapPanel" Width="330" />
+        <Label Content="Label 1" />
+        <TextBox Width="190"></TextBox>
+        <Label Content="Label2"></Label>
+        <TextBox Width="190"></TextBox>
+        <Label Content="Label3"></Label>
+        <TextBox Width="190"></TextBox>
+        <Button Width="80">OK</Button>
+    </WrapPanel>
 </Window>
