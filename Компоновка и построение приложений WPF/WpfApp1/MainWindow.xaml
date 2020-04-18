@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="363.983" Width="845.272">
-    <StackPanel Margin="0,0,2,-4">
+    <StackPanel>
         <Label>Контактная информация</Label>
         <Label>Логин:</Label>
         <TextBox></TextBox>
