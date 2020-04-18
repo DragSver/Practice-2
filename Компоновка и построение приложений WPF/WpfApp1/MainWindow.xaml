@@ -6,19 +6,12 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="363.983" Width="845.272">
-    <StackPanel Orientation="Horizontal">
-        <StackPanel>
-            <Label>Контактная</Label>
-            <Label>информация</Label>
-        </StackPanel>
-        <StackPanel>
-            <Label>Логин:</Label>
-            <TextBox></TextBox>
-        </StackPanel>
-        <StackPanel>
-            <Label>Пароль:</Label>
-            <TextBox></TextBox>
-        </StackPanel>
-        <Button>Отправить</Button>
+    <StackPanel Margin="8">
+        <Label>Контактная информация</Label>
+        <Label>Логин:</Label>
+        <TextBox MinWidth="150" MaxWidth="250" HorizontalAlignment="Left"></TextBox>
+        <Label>Пароль:</Label>
+        <TextBox MinWidth="150" MaxWidth="250" HorizontalAlignment="Left"></TextBox>
+        <Button MinWidth="100" MaxWidth="120" HorizontalAlignment="Stretch" Margin="20" Content="Отправить"></Button>
     </StackPanel>
 </Window>
