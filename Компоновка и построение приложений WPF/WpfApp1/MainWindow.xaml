@@ -10,7 +10,7 @@
         <Label Content="Example" HorizontalAlignment="Center"></Label>
         <Button HorizontalAlignment="Right">Button 1</Button>
         <Button HorizontalAlignment="Left">Button 2</Button>
-        <Button>Button 3</Button>
-        <Button>Button 4</Button>
+        <Button Margin="5">Button 3</Button>
+        <Button Margin="5,10,5,10">Button 4</Button>
     </StackPanel>
 </Window>
