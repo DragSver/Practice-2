@@ -23,6 +23,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            cmd.Margin = new Thickness(5);
         }
     }
 }
