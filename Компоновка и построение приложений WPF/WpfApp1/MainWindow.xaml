@@ -9,14 +9,17 @@
     <Grid ShowGridLines="True">
         <!-- Устанавливаем две строки -->
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
         <!-- Устанавливаем три столбца -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <!-- Устанавливаем абсолютные размеры -->
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <!-- Устанавливаем автоматические размеры -->
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <!-- Пропорциональные размеры -->
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <!-- Размещаем элементы в сетке -->
         <Button Grid.Row="0" Grid.Column="0" Background="Red">Red Button</Button>
