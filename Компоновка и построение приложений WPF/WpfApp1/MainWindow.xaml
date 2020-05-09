@@ -5,22 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-       Title="Элемент Grid" Height="250" Width="380">
-    <Grid>
+       Title="Grid">
+    <Grid Grid.IsSharedSizeScope="True">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Button>Button1</Button>
-        <Button Grid.Column="2">Button2</Button>
-        <Button Grid.Row="1">Button3</Button>
-        <Button Grid.Row="1" Grid.Column="2">Button4</Button>
-        <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Width="5"
-                      VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="#FFB6B6B6"></GridSplitter>
+        <Grid Grid.Row="0" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SomeText"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label>Длинный текст</Label>
+            <Label Grid.Column="1">Другой текст</Label>
+            <TextBlock Grid.Column="2" Padding="5">Элемент TextBlock</TextBlock>
+        </Grid>
+        <Label Grid.Row="1">Текст между двумя элементами Grid</Label>
+        <Grid Grid.Row="2" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SomeText"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label>Текст</Label>
+            <TextBlock Grid.Column="1" Padding="5">TextBlock in Grid2</TextBlock>
+        </Grid>
     </Grid>
 </Window>
