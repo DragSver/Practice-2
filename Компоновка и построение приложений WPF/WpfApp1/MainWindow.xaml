@@ -6,11 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
        Title="" MinHeight="170" MinWidth="230">
-    <Canvas>
-        <Button Canvas.Left="10" Canvas.Top="10">(10,10)</Button>
-        <Button Canvas.Left="100" Canvas.Top="50"
-                Width="100" Height="70" Canvas.ZIndex="1">(100,50)</Button>
-        <Button Canvas.Left="70" Canvas.Top="100"
-                Width="70" Height="30">(70,100)</Button>
-    </Canvas>
+    <InkCanvas EditingMode="Ink">
+        <Image Source="fish.png" InkCanvas.Top="10" InkCanvas.Left="10"></Image>
+    </InkCanvas>
 </Window>
