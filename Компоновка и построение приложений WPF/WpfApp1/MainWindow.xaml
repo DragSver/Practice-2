@@ -5,28 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-       Title=""  Height="427" Width="651">
+       Title="">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel>
-            <Button Name="Btn_next" Margin="5,5,5,0" Padding="3" MinWidth="80">&gt; Next</Button>
-            <Button Name="Btn_prev" Margin="5" Padding="3" MinWidth="80">Prev &lt;</Button>
-            <CheckBox Margin="5,0,5,0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Растянуть</CheckBox>
-        </StackPanel>
-        <TextBox Grid.Column="1" Margin="0,5,5,5" BorderBrush="LightBlue" BorderThickness="2"
-                 Padding="5" TextWrapping="WrapWithOverflow">
-            Windows Presentation Foundation (WPF) — это набор инструментов для построения пользовательских интерфейсов, 
-            появившийся в версии .NET 3.0. Основная цель WPF состоит в интеграции и унификации множества ранее 
-            разрозненных настольных технологий (двух- и трехмерная графика, разработка окон и элементов управления и т.п.) 
-            в единую унифицированную программную модель.
-        </TextBox>
-        <Button Grid.Row="1" Padding="3" Margin="5,0,5,5">Cancel</Button>
+        <Button Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button1" Click="button1_Click" Background="Red"/>
+        <Button Content="" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button2" Background="Blue" Click="button2_Click"/>
+        <Button Content="" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button3" Background="Green" Click="button3_Click"/>
+        <Button Content="" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button4" Background="Cyan" Click="button4_Click"/>
+        <Label Content="" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="label"/>
+        <Button Content="" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button5" Background="Yellow" Click="button5_Click"/>
+        <Button Content="" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button6" Background="Lavender" Click="button6_Click"/>
+        <Button Content="" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button7" Background="Magenta" Click="button7_Click"/>
+        <Button Content="" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Name="button8" Background="Firebrick" Click="button8_Click"/>
+       
     </Grid>
 </Window>
