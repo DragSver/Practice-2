@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,15 +11,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Windows.Markup;
 
-namespace WpfApp1
+namespace WpfApplication1
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public bool Click = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,68 +28,50 @@ namespace WpfApp1
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            buttonClick(sender, e);
-        }
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            buttonClick(sender, e);
+
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            buttonClick(sender, e);
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            buttonClick(sender, e);
-        }
-
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            buttonClick(sender, e);
-        }
-
-        private void button6_Click(object sender, RoutedEventArgs e)
-        {
-            buttonClick(sender, e);
-        }
-
-        private void button7_Click(object sender, RoutedEventArgs e)
-        {
-            buttonClick(sender, e);
-        }
-
-        private void button8_Click(object sender, RoutedEventArgs e)
-        {
-            buttonClick(sender, e);
-        }
-
-        public void buttonClick(object sender, RoutedEventArgs e)
-        {
-            if (Click == false)
+            // Помещаем базовую разметку
+            if (File.Exists(System.Environment.CurrentDirectory + "\\YourXaml.xaml"))
             {
-                button1.Background = new SolidColorBrush(Colors.Firebrick);
-                button2.Background = new SolidColorBrush(Colors.Magenta);
-                button3.Background = new SolidColorBrush(Colors.Lavender);
-                button4.Background = new SolidColorBrush(Colors.Yellow);
-                button5.Background = new SolidColorBrush(Colors.Cyan);
-                button6.Background = new SolidColorBrush(Colors.Green);
-                button7.Background = new SolidColorBrush(Colors.Blue);
-                button8.Background = new SolidColorBrush(Colors.Red);
-                Click = true;
+                txtCodeXAML.Text = File.ReadAllText("YourXaml.xaml");
             }
             else
             {
-                button1.Background = new SolidColorBrush(Colors.Red);
-                button2.Background = new SolidColorBrush(Colors.Blue);
-                button3.Background = new SolidColorBrush(Colors.Green);
-                button4.Background = new SolidColorBrush(Colors.Cyan);
-                button5.Background = new SolidColorBrush(Colors.Yellow);
-                button6.Background = new SolidColorBrush(Colors.Lavender);
-                button7.Background = new SolidColorBrush(Colors.Magenta);
-                button8.Background = new SolidColorBrush(Colors.Firebrick);
-                Click = false;
+                string s = "<Window xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n" +
+                    "xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n" +
+                    "Title=\"XAML Editor\" Height=\"350\" Width=\"525\" WindowStartupLocation=\"CenterScreen\">\n" +
+                    "<StackPanel>\n</StackPanel>\n</Window>";
+                txtCodeXAML.Text = s;
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            // Записать данные из текстового блока в локальный файл
+            File.WriteAllText("YourXaml.xaml", txtCodeXAML.Text);
+        }
+
+        private void btnViewXAML_Click(object sender, RoutedEventArgs e)
+        {
+            // Запись данных из текстового блока в файл YourXaml.xaml
+            File.WriteAllText("YourXaml.xaml", txtCodeXAML.Text);
+            Window myWindow = null;
+            try
+            {
+                using (Stream sr = File.Open("YourXaml.xaml", FileMode.Open))
+                {
+                    myWindow = (Window)XamlReader.Load(sr);
+                    myWindow.ShowDialog();
+                    myWindow.Close();
+                    myWindow = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
