@@ -15,14 +15,23 @@ using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Btn_next.Content = "--> Next other page and window";
+            Btn_prev.Content = "<-- Prev other page and window";
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Btn_next.Content = "> Next";
+            Btn_prev.Content = "< Prev";
         }
     }
 }

@@ -5,34 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-       Title="" MinHeight="180" MinWidth="300" Height="67" Width="186">
+       Title=""  Height="427" Width="651">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Padding="5" Margin="5">Home:</Label>
-        <Label Grid.Row="1" Padding="5" Margin="5">Network:</Label>
-        <Label Grid.Row="2" Padding="5" Margin="5">Web:</Label>
-        <Label Grid.Row="3" Padding="5" Margin="5">Secondary:</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="3" Height="auto"
-                 VerticalAlignment="Center">C:\</TextBox>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Height="auto"
-                 VerticalAlignment="Center">e:\Shared</TextBox>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="3" Height="auto"
-                 VerticalAlignment="Center">C:\Web</TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="3" Height="auto"
-                 VerticalAlignment="Center">C:\</TextBox>
-        <Button Grid.Row="0" Grid.Column="2" Padding="3" Margin="4">Обзор</Button>
-        <Button Grid.Row="1" Grid.Column="2" Padding="3" Margin="4">Обзор</Button>
-        <Button Grid.Row="2" Grid.Column="2" Padding="3" Margin="4">Обзор</Button>
-        <Button Grid.Row="3" Grid.Column="2" Padding="3" Margin="4">Обзор</Button>
+        <StackPanel>
+            <Button Name="Btn_next" Margin="5,5,5,0" Padding="3" MinWidth="80">&gt; Next</Button>
+            <Button Name="Btn_prev" Margin="5" Padding="3" MinWidth="80">Prev &lt;</Button>
+            <CheckBox Margin="5,0,5,0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Растянуть</CheckBox>
+        </StackPanel>
+        <TextBox Grid.Column="1" Margin="0,5,5,5" BorderBrush="LightBlue" BorderThickness="2"
+                 Padding="5" TextWrapping="WrapWithOverflow">
+            Windows Presentation Foundation (WPF) — это набор инструментов для построения пользовательских интерфейсов, 
+            появившийся в версии .NET 3.0. Основная цель WPF состоит в интеграции и унификации множества ранее 
+            разрозненных настольных технологий (двух- и трехмерная графика, разработка окон и элементов управления и т.п.) 
+            в единую унифицированную программную модель.
+        </TextBox>
+        <Button Grid.Row="1" Padding="3" Margin="5,0,5,5">Cancel</Button>
     </Grid>
 </Window>
